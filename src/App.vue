@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <test :t_data="x"></test>
   </div>
 </template>
 
@@ -17,16 +13,27 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
+
+<script>
+//引入
+import test from '@/components/test.vue'
+
+export default {
+  name:'App',
+  //组件注册
+  components:{
+    test
+  },
+  //data必须为函数且return
+  data(){
+    return{
+      x: '16'
+    }
+  },
+  //也允许其他生命周期方法
+  methods: {
+    
+  },
+}
+</script>
